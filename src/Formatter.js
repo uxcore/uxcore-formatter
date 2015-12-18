@@ -32,11 +32,23 @@ Formatter.date = function(str, pattern) {
     return pattern;
 }
 
-Formatter.money = function(str, delimiter) {
+Formatter.money = function(str, delimiter, fixedNum) {
     delimiter = delimiter || " ";
-    return str.replace(/(\d{3})(?![$|\.|\(])/g, function(match, $1) {
-        return $1 + delimiter;
-    });
+    if (fixedNum) {
+        str = parseFloat(str).toFixed(fixedNum).toString()
+    }
+    if (str.indexOf(".") !== -1) {
+        return str.replace(/(\d)(?=(?:\d{3})+(\.))/g, function(match, $1) {
+            return $1 + delimiter;
+        }).replace(/(\d{3})(?![$|\.|\(|\s])/g, function(match, $1) {
+            return $1;
+        });
+    }
+    else {
+        return str.replace(/(\d)(?=(?:\d{3})+$)/g, function(match, $1) {
+            return $1 + delimiter;
+        })
+    }
 }
 
 Formatter.cnmobile = function(str, delimiter) {
