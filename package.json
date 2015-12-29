@@ -1,6 +1,6 @@
 {
   "name": "uxcore-formatter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a formatter library for uxcore",
   "repository": "https://github.com/uxcore/uxcore-formatter.git",
   "author": "eternalsky",
