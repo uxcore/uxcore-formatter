@@ -9,9 +9,9 @@
 var Formatter = {};
 
 Formatter.date = function(str, pattern) {
-    let date = new Date(str);
+    var date = new Date(str);
     pattern = pattern || 'YYYY-MM-DD';
-    let o = {
+    var o = {
         "M+": date.getMonth() + 1, //月份 
         "D+": date.getDate(), //日 
         "d+": date.getDate(), //日 
