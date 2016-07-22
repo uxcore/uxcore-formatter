@@ -4,9 +4,21 @@
   "description": "a formatter library for uxcore",
   "repository": "https://github.com/uxcore/uxcore-formatter.git",
   "author": "eternalsky",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "scripts": {
-    "dev": "gulp server"
+    "start": "uxcore-tools run start",
+    "server": "uxcore-tools run server",
+    "lint": "uxcore-tools run lint",
+    "build": "uxcore-tools run build",
+    "test": "uxcore-tools run test",
+    "coverage": "uxcore-tools run coverage",
+    "pub": "uxcore-tools run pub",
+    "dep": "uxcore-tools run dep",
+    "tnpm-dep": "uxcore-tools run tnpm-dep",
+    "chrome": "uxcore-tools run chrome",
+    "browsers": "uxcore-tools run browsers",
+    "saucelabs": "uxcore-tools run saucelabs",
+    "update": "uxcore-tools run update"
   },
   "bugs": {
     "url": "http://github.com/uxcore/uxcore-formatter/issues"
@@ -19,20 +31,15 @@
     ""
   ],
   "devDependencies": {
-    "babel-core": "^5.6.18",
-    "babel-loader": "^5.3.1",
-    "browser-sync": "~2.8.2",
-    "console-polyfill": "~0.2.1",
-    "es5-shim": "~4.1.10",
-    "gulp": "~3.9.0",
-    "gulp-concat": "~2.6.0",
-    "gulp-just-replace": "~1.0.2",
-    "gulp-less": "~3.0.3",
-    "gulp-sourcemaps": "~1.5.2",
-    "webpack": "^1.10.5",
-    "classnames": "^2.1.2",
-    "react": "^0.13.3",
-    "uxcore-kuma": "~1.0.3"
+    "console-polyfill": "^0.2.2",
+    "es5-shim": "^4.5.8",
+    "expect.js": "~0.3.1",
+    "kuma-base": "1.x",
+    "react": "0.14.x",
+    "react-addons-test-utils": "0.14.x",
+    "react-dom": "0.14.x",
+    "uxcore-kuma": "2.x",
+    "uxcore-tools": "0.2.x"
   },
   "dependencies": {
     "object-assign": "^2.0.0"
