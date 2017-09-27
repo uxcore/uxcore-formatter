@@ -12,7 +12,7 @@ Formatter 是一些处理字符串的工具函数的集合，他的设计原则�
 $ git clone https://github.com/uxcore/uxcore-formatter
 $ cd uxcore-formatter
 $ npm install
-$ gulp server
+$ npm start
 ```
 
 ## Usage
