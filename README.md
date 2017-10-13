@@ -2,7 +2,6 @@
 
 ## uxcore-formatter [![Dependency Status](http://img.shields.io/david/uxcore/uxcore-formatter.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-formatter) [![devDependency Status](http://img.shields.io/david/dev/uxcore/uxcore-formatter.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-formatter#info=devDependencies) 
 
-## TL;DR
 
 Formatter 是一些处理字符串的工具函数的集合，他的设计原则是第一个参数为一个 string，返回值为一个 string，后面的参数皆为可选，即有默认值。
 
