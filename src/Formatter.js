@@ -1,3 +1,4 @@
+/* eslint no-console: "off" */
 /**
  * Formatter Component for uxcore
  * @author eternalsky
@@ -8,7 +9,7 @@
 
 const Formatter = {};
 
-Formatter.date = function (str, pattern) {
+Formatter.date = (str, pattern) => {
   const date = new Date(str);
   if (Object.prototype.toString.call(date) === '[object Date]') {
     if (isNaN(date.getTime())) {
@@ -30,19 +31,31 @@ Formatter.date = function (str, pattern) {
       S: date.getMilliseconds(), // 毫秒
     };
     if (/(y+)/i.test(actualPattern)) {
-      actualPattern = actualPattern.replace(RegExp.$1, (`${date.getFullYear()}`).substr(4 - RegExp.$1.length));
+      actualPattern = actualPattern.replace(
+        RegExp.$1,
+        (`${date.getFullYear()}`).substr(4 - RegExp.$1.length)
+      );
     }
-    for (const k in o) {
+    // for (const k in o) {
+    //   if (new RegExp(`(${k})`).test(actualPattern)) {
+    //     actualPattern = actualPattern.replace(RegExp.$1,
+    //       (RegExp.$1.length === 1) ? (o[k]) : ((`00${o[k]}`).substr((`${o[k]}`).length))
+    //     );
+    //   }
+    // }
+    Object.keys(o).forEach((k) => {
       if (new RegExp(`(${k})`).test(actualPattern)) {
-        actualPattern = actualPattern.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : ((`00${o[k]}`).substr((`${o[k]}`).length)));
+        actualPattern = actualPattern.replace(RegExp.$1,
+          (RegExp.$1.length === 1) ? (o[k]) : ((`00${o[k]}`).substr((`${o[k]}`).length))
+        );
       }
-    }
+    });
     return actualPattern;
   }
   return '';
 };
 
-Formatter.money = function (str, delimiter = ' ', fixedNum) {
+Formatter.money = (str, delimiter = ' ', fixedNum) => {
   const actualStr = fixedNum ? parseFloat(str).toFixed(fixedNum).toString() : str;
   if (actualStr.indexOf('.') !== -1) {
     return actualStr.replace(/(\d)(?=(?:\d{3})+(\.))/g, (match, $1) => $1 + delimiter)
@@ -51,11 +64,13 @@ Formatter.money = function (str, delimiter = ' ', fixedNum) {
   return actualStr.replace(/(\d)(?=(?:\d{3})+$)/g, (match, $1) => $1 + delimiter);
 };
 
-Formatter.cnmobile = function (str, delimiter = ' ') {
-  return str.replace(/^(\+?0?86)(?!$)/, `$1${delimiter}`).replace(/(\d{4})(?!$)/g, `$1${delimiter}`);
+Formatter.cnmobile = (str, delimiter = ' ') => {
+  return str.replace(/^(\+?0?86)(?!$)/,
+    `$1${delimiter}`
+  ).replace(/(\d{4})(?!$)/g, `$1${delimiter}`);
 };
 
-Formatter.card = function (str, delimiter = ' ') {
+Formatter.card = (str, delimiter = ' ') => {
   return str.replace(/(\d{4})(?!$)/g, `$1${delimiter}`);
 };
 
