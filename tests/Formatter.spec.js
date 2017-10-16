@@ -33,8 +33,8 @@ describe('Formatter.date', () => {
     expect(Formatter.date(date, 'MM-DD')).to.be(`${date.getMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`);
     expect(Formatter.date(date, 'DD')).to.be(`${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`);
     expect(Formatter.date(date, 'MM-dd')).to.be(`${date.getMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`);
-    expect(Formatter.date(date, 'QQ')).to.be(`${Math.floor(date.getMonth() + 3 / 3)}`.padStart(2, '0'));
-    expect(Formatter.date(date, 'qq')).to.be(`${Math.floor(date.getMonth() + 3 / 3)}`.padStart(2, '0'));
+    expect(Formatter.date(date, 'QQ')).to.be(`${Math.floor(date.getMonth() / 3) + 1}`.padStart(2, '0'));
+    expect(Formatter.date(date, 'qq')).to.be(`${Math.floor(date.getMonth() / 3) + 1}`.padStart(2, '0'));
     expect(Formatter.date(date, 'hh:mm:ss S')).to.be(`${`${date.getHours()}`.padStart(2, '0')}:${`${date.getMinutes()}`.padStart(2, '0')}:${`${date.getSeconds()}`.padStart(2, '0')} ${`${date.getMilliseconds()}`.padStart(3, '0')}`);
   });
 });

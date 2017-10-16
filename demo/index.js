@@ -6,5 +6,6 @@
  * All rights reserved.
  */
 
- var Demo = require('./FormatterDemo');
+ const Demo = require('./FormatterDemo');
  window.Formatter = Demo;
+
