@@ -1,3 +1,6 @@
+# 0.1.6
+* `CHANGED` fit React@15  
+* `CHANGED` delete 'package-lock.json' file  
 # 0.1.3
 
 * `CHANGED` eslint 
