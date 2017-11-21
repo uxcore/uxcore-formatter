@@ -21,6 +21,10 @@ describe('Formatter.date', () => {
     expect(Formatter.date('test!@#$%^', 'YYYY-MM-DD')).to.be('');
   });
 
+  it('returns empty string when date is null', () => {
+    expect(Formatter.date(null, 'YYYY-MM-DD')).to.be('');
+  });
+
   it('works fine', () => {
     expect(Formatter.date(date, 'YYYY-MM-DD')).to.be(`${date.getFullYear()}-${`${date.getMonth() + 1}`.padStart(2, '0')}-${`${date.getDate()}`.padStart(2, '0')}`);
   });

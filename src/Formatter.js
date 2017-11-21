@@ -10,6 +10,10 @@
 const Formatter = {};
 
 Formatter.date = (str, pattern) => {
+  // new Date(null) 会返回最初日期。
+  if(str == null){
+    return '';
+  }
   const date = new Date(str);
   if (Object.prototype.toString.call(date) === '[object Date]') {
     if (isNaN(date.getTime())) {
