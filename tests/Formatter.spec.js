@@ -23,6 +23,9 @@ describe('Formatter.date', () => {
 
   it('returns empty string when date is null', () => {
     expect(Formatter.date(null, 'YYYY-MM-DD')).to.be('');
+    expect(Formatter.date(undefined, 'YYYY-MM-DD')).to.be('');
+    expect(Formatter.date(false, 'YYYY-MM-DD')).to.be('');
+    expect(Formatter.date('', 'YYYY-MM-DD')).to.be('');
   });
 
   it('works fine', () => {

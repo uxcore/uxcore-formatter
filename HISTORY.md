@@ -1,3 +1,7 @@
+# 0.1.8
+* `CHANGED` undefined/null/''  return ''  
+* because they are all invalid value for date.
+
 # 0.1.7
 * `CHANGED` null check
 

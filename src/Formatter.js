@@ -10,8 +10,9 @@
 const Formatter = {};
 
 Formatter.date = (str, pattern) => {
-  // new Date(null) 会返回最初日期。
-  if(str == null){
+  // new Date(null,false) 会返回最初日期。
+  if (str === null || str === false || str === undefined || str === '') {
+    console.warn('Formatter: invalid date');
     return '';
   }
   const date = new Date(str);
