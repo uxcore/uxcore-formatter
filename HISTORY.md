@@ -1,3 +1,6 @@
+# 0.1.9
+* `CHANGED` use `big.js` instead of `parseFloat` to handle large number fixed
+
 # 0.1.8
 * `CHANGED` undefined/null/''  return ''  
 * because they are all invalid value for date.
