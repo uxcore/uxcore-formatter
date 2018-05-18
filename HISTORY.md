@@ -1,3 +1,7 @@
+## 0,1.11
+
+* `CHANGED` remove useless dependency `object-assign`, `prop-types`
+
 # 0.1.9
 * `CHANGED` use `big.js` instead of `parseFloat` to handle large number fixed
 
