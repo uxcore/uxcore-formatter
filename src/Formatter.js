@@ -64,7 +64,7 @@ Formatter.date = (str, pattern) => {
 
 Formatter.money = (str, delimiter = ' ', fixedNum) => {
   // const actualStr = fixedNum ? parseFloat(str).toFixed(fixedNum).toString() : str;
-  const actualStr = fixedNum ? new Big(str).toFixed(parseInt(fixedNum, 10)).toString() : str;
+  const actualStr = (fixedNum || fixedNum === 0) ? new Big(str).toFixed(parseInt(fixedNum, 10)).toString() : str;
   if (actualStr.indexOf('.') !== -1) {
     return actualStr.replace(/(\d)(?=(?:\d{3})+(\.))/g, (match, $1) => $1 + delimiter)
       .replace(/(\d{3})(?![$|\.|\(|\s])/g, (match, $1) => $1);

@@ -68,6 +68,7 @@ describe('Formatter.money', () => {
 
   it('works with fixed number', () => {
     expect(Formatter.money('100', ',', 0)).to.be('100');
+    expect(Formatter.money('100.1', ',', 0)).to.be('100');
     expect(Formatter.money('100', ',', 2)).to.be('100.00');
     expect(Formatter.money('1000000000.8888', ',', 2)).to.be('1,000,000,000.89');
     expect(Formatter.money('1000000000.99', ',', 5)).to.be('1,000,000,000.99000');
