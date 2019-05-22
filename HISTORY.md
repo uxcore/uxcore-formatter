@@ -1,4 +1,4 @@
-## 0.1.12
+## 0.1.13
 * `FIXED` fix bug when fixNum is 0
 
 ## 0.1.11
